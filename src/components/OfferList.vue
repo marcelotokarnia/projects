@@ -1,6 +1,7 @@
 <template>
   <div>
   	<Logout />
+    <h2><b>Active Offers (total: {{offers.length}})</b></h2>
   	<div class="container-fluid">
   	  <div class="row" v-for="(offer, index) of offers" v-if="index%2 === 0">
   	    <OfferCard :offer="offer" class="col-xs-5 col-sm-6 col-lg-4"></OfferCard>
@@ -18,14 +19,28 @@ import OfferCard from '@/components/OfferCard.vue'
 export default {
   data () {
   	return {
-  	  offers: sort(compose(not, prop('isPremium')))(filter(isOfferEnabled)(this.$store.getters.offers))
+  	  offers: sort(
+        compose(
+          not, 
+          prop('isPremium')
+        )
+      )(filter(
+        isOfferEnabled
+      )(this.$store.getters.offers))
   	}
   }, 
   components: {Logout, OfferCard}, 
   created () {
     this.$store.subscribe((mutation, state) => {
-      if (contains(mutation.type)(['SAVE_FORM', 'REMOVE_FORM'])){
-        this.offers = state.offers
+      if (contains(mutation.type)(['SAVE_OFFER', 'REMOVE_OFFER', 'ENABLE_OFFER'])){
+        this.offers = sort(
+          compose(
+            not, 
+            prop('isPremium')
+          )
+        )(filter(
+          isOfferEnabled
+        )(state.offers))
       }
     })
   }

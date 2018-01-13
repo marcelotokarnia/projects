@@ -6,13 +6,13 @@
       </span>
     </div>
     <div>
-      <p>
-        {{offer.name}}
-      </p>
-    </div>
-    <div>
-      <button class="btn" :class="{'btn-success btn-lg': offer.isPremium}">
-        Shop Now
+      <button class="btn" :class="{'btn-warning btn-lg': offer.isPremium}">
+        <a :href="offer.url" target="__blank">
+          Shop Now at {{offer.name}}
+          <p v-if="offer.ends" class="text-muted">
+            Valid until {{(new Date(offer.ends)).toLocaleDateString()}}
+          </p>
+        </a>
       </button>
     </div>
   </div>

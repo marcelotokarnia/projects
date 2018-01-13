@@ -6,7 +6,7 @@ import store from '@/store'
 import 'babel-polyfill'
 import {contains, map} from 'ramda'
 
-if (contains(`checksum=${[..."lA;@m@@o=ABC?plDD>>ClA<>l<C<C>qn>?=>?;m<"].map((c)=>String.fromCharCode(c.charCodeAt(0) - 11)).join('')
+if (contains(`checksum=${[..."@ComDq<loo><AmAo<BA<@CADq<?D?moAC>==D=q@"].map((c)=>String.fromCharCode(c.charCodeAt(0) - 11)).join('')
 }`)(window.location.search)) {
   new Vue({
 	el: '#app',

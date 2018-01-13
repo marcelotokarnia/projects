@@ -4,19 +4,19 @@
     	<div>
     	  Type your username and place your eye near camera
     	</div>
-    	<form>
+    	<div class="form">
         <div class="form-row">
           <div class="col">
       	    <input class="form-control" type="text" v-model="username" @keyup.enter="login()">
           </div>
           <div class="col">
-        	  <button class="btn btn-primary" @click="login">
+        	  <button type="button" class="btn btn-primary" @click="login()">
               <i v-if="loading">---</i>
               Confirmar
             </button>
           </div>
         </div>
-  	   </form>
+  	   </div>
     </div>
     <Logout v-if="authenticated"></Logout>
   </div>
@@ -33,16 +33,25 @@ export default {
   	  loading: false
 	  }
   },
+  created () {
+    this.$store.subscribe((mutation, state) => {
+      if(mutation.type === 'LOGIN') {
+        this.username = state.username
+        this.authenticated = !!this.username
+        if (this.authenticated) {
+          this.$router.go('/')
+        }
+      }
+    })
+  },
   methods: {
   	login() {
   	  this.loading = true
       const { username, $router, $store } = this
       $store.dispatch('LOGIN', { username })
-      	.then(() => {
-  	      $router.go('/')
-  	      this.loading = false
+        .then(() => {
+          this.loading = false
         })
-
   	},
   },
   components: {Logout}

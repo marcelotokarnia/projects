@@ -8,8 +8,8 @@ describe('OfferForm.vue component', () => {
   it('testing some components methods', () => {
 
     const vm = mount(OfferForm, {store})
-    expect(!!vm.methods().isValidUrl('www.airbnb.com')).to.be.true
-    expect(!!vm.methods().isValidUrl('wwwairbnbcom')).to.be.false
+    expect(!!vm.methods().isValidUrl('https://www.airbnb.com')).to.be.true
+    expect(!!vm.methods().isValidUrl('www.airbnb.com')).to.be.false
     expect(!!vm.methods().isValidDescription('')).to.be.false
   })
 })

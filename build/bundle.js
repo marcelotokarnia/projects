@@ -3091,9 +3091,9 @@ module.exports = g;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_180__reduced__ = __webpack_require__(433);
 /* unused harmony reexport reduced */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_181__reject__ = __webpack_require__(93);
-/* unused harmony reexport reject */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_181__reject__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_182__remove__ = __webpack_require__(194);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_182__remove__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_182__remove__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_183__repeat__ = __webpack_require__(434);
 /* unused harmony reexport repeat */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_184__replace__ = __webpack_require__(435);
@@ -3109,7 +3109,7 @@ module.exports = g;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_189__slice__ = __webpack_require__(29);
 /* unused harmony reexport slice */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_190__sort__ = __webpack_require__(438);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_190__sort__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_190__sort__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_191__sortBy__ = __webpack_require__(439);
 /* unused harmony reexport sortBy */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_192__sortWith__ = __webpack_require__(440);
@@ -3195,7 +3195,7 @@ module.exports = g;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_232__until__ = __webpack_require__(473);
 /* unused harmony reexport until */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_233__update__ = __webpack_require__(127);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_233__update__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_233__update__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_234__useWith__ = __webpack_require__(216);
 /* unused harmony reexport useWith */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_235__values__ = __webpack_require__(174);
@@ -17623,7 +17623,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     this.$store.subscribe((mutation, state) => {
       if (mutation.type === 'EDIT_OFFER') {
         this.offer = state.offer;
-      } else if (Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["d" /* contains */])(mutation.type)(['SAVE_FORM', 'REMOVE_FORM'])) {
+      } else if (Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["d" /* contains */])(mutation.type)(['SAVE_OFFER', 'REMOVE_OFFER'])) {
         this.offers = state.offers;
       }
     });
@@ -17646,17 +17646,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       return `${dt.getFullYear()}-${dt.getMonth() < 9 ? '0' : ''}${dt.getMonth() + 1}-${dt.getDate() < 9 ? '0' : ''}${dt.getDate()}`;
     },
     isValidUrl(url) {
-      return url.match(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/);
+      return url.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/);
     },
-    isValidName(name) {
-      return Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["j" /* not */])(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["d" /* contains */])(name)(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["i" /* map */])(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["k" /* prop */])('name'))(this.offers)));
+    isValidName(name, id) {
+      return Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["j" /* not */])(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["d" /* contains */])(name)(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["i" /* map */])(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["k" /* prop */])('name'))(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["m" /* reject */])(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["l" /* propEq */])('id', id))(this.offers))));
     },
     isValidDescription(description) {
       return description && description.length <= 500;
     },
     isValidForm() {
-      const { name, url, description, starts } = this.offer;
-      return this.isValidDescription(description) && starts && this.isValidName(name) && this.isValidUrl(url);
+      const { name, url, description, starts, id } = this.offer;
+      return this.isValidDescription(description) && starts && this.isValidName(name, id) && this.isValidUrl(url);
     },
     submit() {
       const { offer, $store, isValidForm } = this;
@@ -20032,7 +20032,7 @@ var where = /*#__PURE__*/Object(__WEBPACK_IMPORTED_MODULE_0__internal_curry2__["
       return Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["i" /* map */])(offer => Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["b" /* assoc */])('status', Object(__WEBPACK_IMPORTED_MODULE_1__utils_js__["a" /* isOfferEnabled */])(offer))(offer))(offers);
     },
     orderBy(attr) {
-      return Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["n" /* sort */])(Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["k" /* prop */])(attr))(this.offers);
+      return Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["o" /* sort */])(Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["k" /* prop */])(attr))(this.offers);
     }
   }
 });
@@ -20112,7 +20112,7 @@ const store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
     SAVE_OFFER: (state, offer) => {
       const offers = getFromLocalStorage(OFFERS, []);
       if (Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["g" /* has */])('id')(offer)) {
-        const updatedOffers = Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["o" /* update */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["f" /* findIndex */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["l" /* propEq */])('id', Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["k" /* prop */])('id', offer)))(offers), offer)(offers);
+        const updatedOffers = Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["p" /* update */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["f" /* findIndex */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["l" /* propEq */])('id', Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["k" /* prop */])('id', offer)))(offers), offer)(offers);
         setToLocalStorage(OFFERS, updatedOffers);
         state.offers = updatedOffers;
       } else {
@@ -20126,13 +20126,13 @@ const store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
     },
     REMOVE_OFFER: (state, id) => {
       const offers = getFromLocalStorage(OFFERS, []);
-      const updatedOffers = Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["m" /* remove */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["f" /* findIndex */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["l" /* propEq */])('id', id))(offers), 1)(offers);
+      const updatedOffers = Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["n" /* remove */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["f" /* findIndex */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["l" /* propEq */])('id', id))(offers), 1)(offers);
       setToLocalStorage(OFFERS, updatedOffers);
       state.offers = updatedOffers;
     },
     ENABLE_OFFER: (state, offer) => {
       const offers = getFromLocalStorage(OFFERS, []);
-      const updatedOffers = Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["o" /* update */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["f" /* findIndex */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["l" /* propEq */])('id', Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["k" /* prop */])('id', offer)))(offers), Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["b" /* assoc */])('isDisabled', Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["j" /* not */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["k" /* prop */])('isDisabled')(offer)))(offer))(offers);
+      const updatedOffers = Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["p" /* update */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["f" /* findIndex */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["l" /* propEq */])('id', Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["k" /* prop */])('id', offer)))(offers), Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["b" /* assoc */])('isDisabled', Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["j" /* not */])(Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["k" /* prop */])('isDisabled')(offer)))(offer))(offers);
       setToLocalStorage(OFFERS, updatedOffers);
       state.offers = updatedOffers;
     }
@@ -20254,12 +20254,22 @@ const store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
       loading: false
     };
   },
+  created() {
+    this.$store.subscribe((mutation, state) => {
+      if (mutation.type === 'LOGIN') {
+        this.username = state.username;
+        this.authenticated = !!this.username;
+        if (this.authenticated) {
+          this.$router.go('/');
+        }
+      }
+    });
+  },
   methods: {
     login() {
       this.loading = true;
       const { username, $router, $store } = this;
       $store.dispatch('LOGIN', { username }).then(() => {
-        $router.go('/');
         this.loading = false;
       });
     }
@@ -20288,6 +20298,7 @@ const store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 //
 //
 //
+//
 
 
 
@@ -20296,14 +20307,14 @@ const store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 /* harmony default export */ __webpack_exports__["a"] = ({
   data() {
     return {
-      offers: Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["n" /* sort */])(Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["c" /* compose */])(__WEBPACK_IMPORTED_MODULE_0_ramda__["j" /* not */], Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["k" /* prop */])('isPremium')))(Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["e" /* filter */])(__WEBPACK_IMPORTED_MODULE_1__utils_js__["a" /* isOfferEnabled */])(this.$store.getters.offers))
+      offers: Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["o" /* sort */])(Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["c" /* compose */])(__WEBPACK_IMPORTED_MODULE_0_ramda__["j" /* not */], Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["k" /* prop */])('isPremium')))(Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["e" /* filter */])(__WEBPACK_IMPORTED_MODULE_1__utils_js__["a" /* isOfferEnabled */])(this.$store.getters.offers))
     };
   },
   components: { Logout: __WEBPACK_IMPORTED_MODULE_2__components_Logout_vue__["a" /* default */], OfferCard: __WEBPACK_IMPORTED_MODULE_3__components_OfferCard_vue__["a" /* default */] },
   created() {
     this.$store.subscribe((mutation, state) => {
-      if (Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["d" /* contains */])(mutation.type)(['SAVE_FORM', 'REMOVE_FORM'])) {
-        this.offers = state.offers;
+      if (Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["d" /* contains */])(mutation.type)(['SAVE_OFFER', 'REMOVE_OFFER', 'ENABLE_OFFER'])) {
+        this.offers = Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["o" /* sort */])(Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["c" /* compose */])(__WEBPACK_IMPORTED_MODULE_0_ramda__["j" /* not */], Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["k" /* prop */])('isPremium')))(Object(__WEBPACK_IMPORTED_MODULE_0_ramda__["e" /* filter */])(__WEBPACK_IMPORTED_MODULE_1__utils_js__["a" /* isOfferEnabled */])(state.offers));
       }
     });
   }
@@ -21305,7 +21316,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-if (Object(__WEBPACK_IMPORTED_MODULE_6_ramda__["d" /* contains */])(`checksum=${[..."lA;@m@@o=ABC?plDD>>ClA<>l<C<C>qn>?=>?;m<"].map(c => String.fromCharCode(c.charCodeAt(0) - 11)).join('')}`)(window.location.search)) {
+if (Object(__WEBPACK_IMPORTED_MODULE_6_ramda__["d" /* contains */])(`checksum=${[..."@ComDq<loo><AmAo<BA<@CADq<?D?moAC>==D=q@"].map(c => String.fromCharCode(c.charCodeAt(0) - 11)).join('')}`)(window.location.search)) {
 		new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 				el: '#app',
 				router: __WEBPACK_IMPORTED_MODULE_3__router_js__["a" /* default */],
@@ -33165,8 +33176,8 @@ var render = function() {
                 {
                   name: "show",
                   rawName: "v-show",
-                  value: !_vm.isValidName(_vm.offer.name),
-                  expression: "!isValidName(offer.name)"
+                  value: !_vm.isValidName(_vm.offer.name, _vm.offer.id),
+                  expression: "!isValidName(offer.name, offer.id)"
                 }
               ],
               staticClass: "form-text text-danger"
@@ -33408,6 +33419,7 @@ var render = function() {
             {
               staticClass: "btn btn-primary h-center",
               class: { disabled: !_vm.isValidForm() },
+              attrs: { type: "button" },
               on: { click: _vm.submit }
             },
             [
@@ -33722,7 +33734,7 @@ if (false) {
 
 const isAllowed = isPublic => isPublic || !!__WEBPACK_IMPORTED_MODULE_0__store_index_js__["a" /* default */].getters.username;
 
-const proceed = ({ meta }, _, next) => isAllowed(meta && meta.isPublic) ? next() : next({ name: 'login' });
+const proceed = ({ meta, path }, to, next) => isAllowed(meta && meta.isPublic) ? next() : next({ name: 'login' });
 
 /* harmony default export */ __webpack_exports__["a"] = (proceed);
 
@@ -40418,7 +40430,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("form", [
+            _c("div", { staticClass: "form" }, [
               _c("div", { staticClass: "form-row" }, [
                 _c("div", { staticClass: "col" }, [
                   _c("input", {
@@ -40458,7 +40470,12 @@ var render = function() {
                     "button",
                     {
                       staticClass: "btn btn-primary",
-                      on: { click: _vm.login }
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          _vm.login()
+                        }
+                      }
                     },
                     [
                       _vm.loading ? _c("i", [_vm._v("---")]) : _vm._e(),
@@ -40578,7 +40595,7 @@ exports = module.exports = __webpack_require__(42)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -40698,17 +40715,28 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", [
-      _c("p", [_vm._v("\n      " + _vm._s(_vm.offer.name) + "\n    ")])
-    ]),
-    _vm._v(" "),
-    _c("div", [
       _c(
         "button",
         {
           staticClass: "btn",
-          class: { "btn-success btn-lg": _vm.offer.isPremium }
+          class: { "btn-warning btn-lg": _vm.offer.isPremium }
         },
-        [_vm._v("\n      Shop Now\n    ")]
+        [
+          _c("a", { attrs: { href: _vm.offer.url, target: "__blank" } }, [
+            _vm._v(
+              "\n        Shop Now at " + _vm._s(_vm.offer.name) + "\n        "
+            ),
+            _vm.offer.ends
+              ? _c("p", { staticClass: "text-muted" }, [
+                  _vm._v(
+                    "\n          Valid until " +
+                      _vm._s(new Date(_vm.offer.ends).toLocaleDateString()) +
+                      "\n        "
+                  )
+                ])
+              : _vm._e()
+          ])
+        ]
       )
     ])
   ])
@@ -40737,6 +40765,12 @@ var render = function() {
     "div",
     [
       _c("Logout"),
+      _vm._v(" "),
+      _c("h2", [
+        _c("b", [
+          _vm._v("Active Offers (total: " + _vm._s(_vm.offers.length) + ")")
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "div",

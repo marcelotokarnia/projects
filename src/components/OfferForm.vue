@@ -6,7 +6,7 @@
       <div class="row">
         <label class="form-check-label" for="name">* Name</label>
         <input id="name" class="form-control" v-model="offer.name" type="text">
-        <small class="form-text text-danger" v-show="!isValidName(offer.name)">
+        <small class="form-text text-danger" v-show="!isValidName(offer.name, offer.id)">
         * This attribute is required and it must be unique
         </small>
 
@@ -41,7 +41,7 @@
         <input id="premium" class="form-check-input" type="checkbox" v-model="offer.isPremium">
       </div>
       <div class="row">
-      	<button class="btn btn-primary h-center" :class="{'disabled': !isValidForm()}" @click="submit">
+      	<button type="button" class="btn btn-primary h-center" :class="{'disabled': !isValidForm()}" @click="submit">
           <i v-if="loading">---</i>
           Submit
         </button>
@@ -52,7 +52,7 @@
 
 <script>
   import Logout from '@/components/Logout.vue'
-  import {contains, prop, map, not} from 'ramda'
+  import {contains, reject, prop, map, not, propEq} from 'ramda'
 
   export default {
     data () {
@@ -73,7 +73,7 @@
       this.$store.subscribe((mutation, state) => {
         if(mutation.type === 'EDIT_OFFER') {
           this.offer = state.offer
-        } else if (contains(mutation.type)(['SAVE_FORM', 'REMOVE_FORM'])){
+        } else if (contains(mutation.type)(['SAVE_OFFER', 'REMOVE_OFFER'])){
           this.offers = state.offers
         }
       })
@@ -97,14 +97,14 @@
 
       },
       isValidUrl(url) {
-        return url.match(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)
+        return url.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)
       },
-      isValidName(name) {
+      isValidName(name, id) {
         return not(
           contains(name)(
             map(
               prop('name')
-            )(this.offers)
+            )(reject(propEq('id', id))(this.offers))
           )
         )
       },
@@ -112,10 +112,10 @@
         return description && description.length <= 500; 
       },
       isValidForm() {
-        const {name, url, description, starts} = this.offer
+        const {name, url, description, starts, id} = this.offer
         return this.isValidDescription(description) && 
           starts && 
-          this.isValidName(name) && 
+          this.isValidName(name, id) && 
           this.isValidUrl(url)
       },
       submit () {
