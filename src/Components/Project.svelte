@@ -1,11 +1,16 @@
 <script>
-  import MediaImage from './MediaImage.svelte'
+  import RotatingImages from './RotatingImages.svelte'
+  import GithubSource from './GithubSource.svelte'
+  import Tags from './Tags.svelte'
   import { cond, equals, always, T } from 'ramda'
 
   export let title
   export let size
   export let images
   export let text
+  export let tags
+  export let repo
+  export let link
 
   const getClasses = cond([
     [equals('big'), always('col-md-6')],
@@ -14,18 +19,31 @@
   ])
 </script>
 
+<style>
+  a:visited {
+    color: white;
+  }
+</style>
+
 <div class={getClasses(size)}>
-  <p class="ttu f5" style={{ color: 'red' }}>React</p>
   {#if size !== 'small'}
     <button class="pointer w-100 overflow-hidden db relative news-thumbnail-post__link">
-      <MediaImage {title} {images} />
-      <button
-        class="dn db-l bg-black-30 hover-bg-black-60 bg-animate white pv3 ph4 ba b--white absolute
-        news-thumbnail__btn">
-        Read More
-      </button>
+      <RotatingImages {title} {images} />
+      <a
+        class="db bg-black-30 hover-bg-black-60 bg-animate white pv3 ph4 ba b--white absolute
+        news-thumbnail__btn"
+        href={link}>
+        See it live
+      </a>
     </button>
   {/if}
-  <h1 class={`pointer ${size === 'big' ? 'f1' : 'f3'} b`}>{title}</h1>
-  <p class={`f4 gray ${size === 'big' ? 'dn-m dn-l' : ''}`}>{text}</p>
+  <div class="flex mb2">
+    <div class="flex-auto">
+      <h1 class={`pointer ${size === 'big' ? 'f1' : 'f3'} b`}>{title}</h1>
+      <Tags {tags} />
+    </div>
+    <GithubSource {repo} />
+  </div>
+
+  <p class="f4 dark-gray">{text}</p>
 </div>

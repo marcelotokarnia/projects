@@ -4,8 +4,12 @@ import stravaMaps3 from '../assets/projects/strava-maps3.png'
 
 export default [
   {
-    title: "Obama Offers Hopeful Vision While Noting Nation's Fears",
-    text: 'In his last State of the Union address, President Obama sought to paint a',
+    title: 'Strava Maps',
+    text: `This application leverages on the use of Strava API, providing users custom visualizations of their own activities.
+You may also opt to interact on mocked data if you are not willing to sync with your strava account (or if you don't have one).`,
     images: [stravaMaps1, stravaMaps2, stravaMaps3],
+    tags: ['Graphql', 'React', 'Tachyons', 'Redis', 'Javascript', 'Typescript', 'Node', 'Express'],
+    repo: 'https://github.com/marcelotokarnia/strava-maps',
+    link: 'https://strava-maps.herokuapp.com/',
   },
 ]

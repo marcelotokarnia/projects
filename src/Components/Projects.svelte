@@ -15,14 +15,11 @@
   const projectsTransform = projects =>
     separateProjects(
       projects.reduce((acc, proj, idx) => {
-        const { title, text, images } = proj
         const size = getSize(idx)
         return append(
           {
-            title,
-            text,
-            images,
-            size: 'big',
+            ...proj,
+            size,
           },
           acc
         )
@@ -33,8 +30,8 @@
 
 {#each containers as container, idx}
   <div key={idx} class="container mb4 relative">
-    {#each container as { title, text, images, size }}
-      <Project {title} {text} {size} {images} />
+    {#each container as project}
+      <Project {...project} />
     {/each}
 
     {#if idx !== containers.length - 1}
