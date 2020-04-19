@@ -14,7 +14,6 @@
 </script>
 
 <img
-  class="h-100 w-auto"
   on:mouseenter={handleMouseenter}
   on:mouseleave={handleMouseleave}
   alt={title}

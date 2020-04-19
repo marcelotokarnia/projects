@@ -26,17 +26,15 @@
 </style>
 
 <div class={getClasses(size)}>
-  {#if size !== 'small'}
-    <button class="pointer w-100 overflow-hidden db relative news-thumbnail-post__link">
-      <RotatingImages {title} {images} />
-      <a
-        class="db bg-black-30 hover-bg-black-60 bg-animate white pv3 ph4 ba b--white absolute
-        news-thumbnail__btn"
-        href={link}>
-        See it live
-      </a>
-    </button>
-  {/if}
+  <button class="pointer w-100 overflow-hidden db relative news-thumbnail-post__link">
+    <RotatingImages {title} {images} />
+    <a
+      class="db bg-black-30 hover-bg-black-60 bg-animate white pv3 ph4 ba b--white absolute
+      news-thumbnail__btn"
+      href={link}>
+      See it live
+    </a>
+  </button>
   <div class="flex mb2">
     <div class="flex-auto">
       <h1 class={`pointer ${size === 'big' ? 'f1' : 'f3'} b`}>{title}</h1>
@@ -45,5 +43,9 @@
     <GithubSource {repo} />
   </div>
 
-  <p class="f4 dark-gray">{text}</p>
+  <div class="f4 dark-gray">
+    {#each text.split('\n') as line}
+      <p>{line}</p>
+    {/each}
+  </div>
 </div>
