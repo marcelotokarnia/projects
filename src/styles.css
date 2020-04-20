@@ -2,6 +2,10 @@
   border-color: black;
 }
 
+.themecolor {
+  background-color: #bd5d38;
+}
+
 @media (max-width: 761px) {
   .navbar-menu_minified {
     width: 100%;
