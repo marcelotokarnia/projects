@@ -14,6 +14,8 @@
 </script>
 
 <img
+  on:touchstart={handleMouseenter}
+  on:touchend={handleMouseleave}
   on:mouseenter={handleMouseenter}
   on:mouseleave={handleMouseleave}
   alt={title}
