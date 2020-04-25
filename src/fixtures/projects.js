@@ -1,4 +1,11 @@
-import { stravaMaps, djangoNews, trekkpedia, revues, playingWithCanvas } from '../assets/projects'
+import {
+  stravaMaps,
+  djangoNews,
+  trekkpedia,
+  revues,
+  playingWithCanvas,
+  portfolio,
+} from '../assets/projects'
 
 export default [
   {
@@ -6,7 +13,10 @@ export default [
     text: `This application leverages on the use of Strava API, 
     providing users custom visualizations of their own activities.
     You may also opt to interact on mocked data if you are not willing to sync with your strava account (or if you don't have one).`,
-    textMore: '',
+    textMore: `As a big user of Strava, I have a lot of fun empowering myself through coding to visualize my data in ways the proper Strava can't show me.
+    This application started as something just to keep my mind busy while quarantining, but I turned out to really enjoy coding on it.
+    It's my favorite stack (React + Graphql + Express + Typescript) and it allows me learn while providing myself some useful results on Strava.
+    This project keeps me motivated for both coding and running.`,
     images: stravaMaps,
     tags: [
       'Graphql',
@@ -25,13 +35,15 @@ export default [
     link: 'https://strava-maps.herokuapp.com/',
   },
   {
-    title: 'Svelte Portifolio',
+    title: 'Svelte Portfolio',
     text: `It's actually this exact page you are seeing right now 😆.
     This is a test project to experiment on a new frontend framework (at least for me) called Svelte.
     It did bring me back nostalgic moments from AngularJS, in a structure similar to Vue (.vue / .svelte files).
     But with a tooling similar to React. So felt like a big mesh up but I can see it's potential.`,
-    textMore: '',
-    images: stravaMaps,
+    textMore: `I reused the responsive styling I once created for Django News project and did a few improvements to fit this new need.
+    The profile page was created using a Resume template provided by startbootstrap.
+    As an attempt to organize my portfolio with a bit more condensed (and visual) information than the spread version of it in Github.`,
+    images: portfolio,
     tags: ['Svelte', 'Tachyons', 'Bootstrap', 'Javascript', 'Rollup'],
     repo: 'https://github.com/marcelotokarnia/marcelotokarnia.github.io',
     link: 'https://marcelotokarnia.github.io',
@@ -69,7 +81,7 @@ export default [
   {
     title: 'Django News',
     text: `In case you think the template is similar from this very website, you are totally correct.
-    I refurbished this django-news into this portifolio when studying Svelte.
+    I refurbished this django-news into this portfolio when studying Svelte.
     But Django-News actually have a backend attached to it, so you can log in, filter your selection (and save your preferred selection) for reading the news.`,
     textMore: `As the mentioned tags already describe a bit too briefly:
     This application is based on bootstrap and tachyons for styling (and custom style by Stylus preprocessor),

@@ -13,9 +13,13 @@ import revues3 from './revues3.png'
 import playingWithCanvas1 from './playingWithCanvas1.png'
 import playingWithCanvas2 from './playingWithCanvas2.png'
 import playingWithCanvas3 from './playingWithCanvas3.png'
+import portfolio1 from './portfolio1.png'
+import portfolio2 from './portfolio2.png'
+import portfolio3 from './portfolio3.png'
 
 export const djangoNews = [djangoNews1, djangoNews2, djangoNews3]
 export const stravaMaps = [stravaMaps1, stravaMaps2, stravaMaps3]
 export const trekkpedia = [trekkpedia1, trekkpedia2, trekkpedia3]
 export const revues = [revues1, revues2, revues3]
 export const playingWithCanvas = [playingWithCanvas1, playingWithCanvas2, playingWithCanvas3]
+export const portfolio = [portfolio1, portfolio2, portfolio3]
