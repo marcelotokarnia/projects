@@ -2,6 +2,11 @@
   border-color: black;
 }
 
+.nav-header__position {
+  top: 0;
+  left: 0;
+}
+
 .themecolor {
   background-color: #bd5d38;
 }

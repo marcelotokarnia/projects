@@ -15,9 +15,9 @@
   export let textMore
 
   const getClasses = cond([
-    [equals('big'), always('col-md-6')],
-    [equals('medium'), always('col-md-3 col-sm-6')],
-    [T, always('col-md-4 col-sm-6')],
+    [equals('big'), always('col-md-6 pt6')],
+    [equals('medium'), always('col-md-3 col-sm-6 pt6')],
+    [T, always('col-md-4 col-sm-6 pt6')],
   ])
 </script>
 

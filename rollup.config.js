@@ -21,7 +21,7 @@ export default {
     image(),
     inject({
       include: '**/*.min.js',
-      exclude: 'node_modules/**',
+      exclude: ['node_modules/**', 'profile/**'],
       $: 'jquery',
       jquery: 'jquery',
       'window.jQuery': 'jquery',
@@ -62,7 +62,12 @@ export default {
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
-    production && terser(),
+    production &&
+      terser({
+        sourcemap: true,
+        exclude: ['node_modules/**', 'profile/**'],
+        include: '**/*.min.js',
+      }),
   ],
   watch: {
     clearScreen: false,
