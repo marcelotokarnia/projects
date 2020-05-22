@@ -76,7 +76,7 @@ export default [
       'Python',
     ],
     repo: 'https://github.com/marcelotokarnia/mountains-catalog',
-    link: 'http://54.90.205.133/',
+    link: 'http://mountains.tokks.tech/',
   },
   {
     title: 'Django News',
@@ -105,7 +105,7 @@ export default [
       'Redux',
     ],
     repo: 'https://github.com/marcelotokarnia/django-news/',
-    link: 'https://django-news.herokuapp.com/news',
+    link: 'http://news.tokks.tech',
   },
   {
     title: 'ReVue',
@@ -133,6 +133,6 @@ export default [
     images: playingWithCanvas,
     tags: ['React', 'Canvas', 'Redux', 'Stylus'],
     repo: 'https://github.com/marcelotokarnia/playing-with-canvas',
-    link: 'https://canvas-tokarnia.now.sh/',
+    link: 'https://canvas.tokks.tech/',
   },
 ]
