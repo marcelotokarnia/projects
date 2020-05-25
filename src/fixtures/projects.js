@@ -46,7 +46,7 @@ export default [
     images: portfolio,
     tags: ['Svelte', 'Tachyons', 'Bootstrap', 'Javascript', 'Rollup'],
     repo: 'https://github.com/marcelotokarnia/marcelotokarnia.github.io',
-    link: 'https://marcelotokarnia.github.io',
+    link: 'https://projects.tokks.tech',
   },
   {
     title: 'Trekkpedia',

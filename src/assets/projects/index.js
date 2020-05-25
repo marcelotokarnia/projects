@@ -1,25 +1,31 @@
-import djangoNews1 from './djangoNews1.png'
-import djangoNews2 from './djangoNews2.png'
-import djangoNews3 from './djangoNews3.png'
-import stravaMaps1 from './strava-maps1.png'
-import stravaMaps2 from './strava-maps2.png'
-import stravaMaps3 from './strava-maps3.png'
-import trekkpedia1 from './trekkpedia1.png'
-import trekkpedia2 from './trekkpedia2.png'
-import trekkpedia3 from './trekkpedia3.png'
-import revues1 from './revues1.png'
-import revues2 from './revues2.png'
-import revues3 from './revues3.png'
-import playingWithCanvas1 from './playingWithCanvas1.png'
-import playingWithCanvas2 from './playingWithCanvas2.png'
-import playingWithCanvas3 from './playingWithCanvas3.png'
-import portfolio1 from './portfolio1.png'
-import portfolio2 from './portfolio2.png'
-import portfolio3 from './portfolio3.png'
-
-export const djangoNews = [djangoNews1, djangoNews2, djangoNews3]
-export const stravaMaps = [stravaMaps1, stravaMaps2, stravaMaps3]
-export const trekkpedia = [trekkpedia1, trekkpedia2, trekkpedia3]
-export const revues = [revues1, revues2, revues3]
-export const playingWithCanvas = [playingWithCanvas1, playingWithCanvas2, playingWithCanvas3]
-export const portfolio = [portfolio1, portfolio2, portfolio3]
+const cloudinaryTransformations = `/c_scale,h_400,q_auto:low`
+export const djangoNews = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440536/projects/djangoNews1_nqmuq7.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440535/projects/djangoNews2_bh0ymk.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440536/projects/djangoNews3_nkxaf6.png`,
+]
+export const stravaMaps = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440542/projects/strava-maps1_anhmgo.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440537/projects/strava-maps2_dgzwos.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440537/projects/strava-maps3_wud8hz.png`,
+]
+export const trekkpedia = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440538/projects/trekkpedia1_ufaolq.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440537/projects/trekkpedia2_apgu1l.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440540/projects/trekkpedia3_meocuw.png`,
+]
+export const revues = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440536/projects/revues1_ogsaal.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440536/projects/revues2_o80gsn.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440538/projects/revues3_opo6oh.png`,
+]
+export const playingWithCanvas = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440535/projects/playingWithCanvas1_wlj8f8.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440535/projects/playingWithCanvas2_kvnq6t.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440535/projects/playingWithCanvas3_wwgmhz.png`,
+]
+export const portfolio = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440537/projects/portfolio1_icxq8d.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440536/projects/portfolio2_ozrvma.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440536/projects/portfolio3_h1o1tr.png`,
+]

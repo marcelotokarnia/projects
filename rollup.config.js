@@ -4,29 +4,23 @@ import commonjs from '@rollup/plugin-commonjs'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
 import postcss from 'rollup-plugin-postcss'
-import inject from '@rollup/plugin-inject'
 import image from '@rollup/plugin-image'
+import analyze from 'rollup-plugin-analyzer'
+import fs from 'fs'
 
 const production = !process.env.ROLLUP_WATCH
 
 export default {
   input: 'src/main.js',
   output: {
-    sourcemap: true,
+    sourcemap: false,
     format: 'iife',
     name: 'app',
     file: 'public/build/bundle.js',
   },
   plugins: [
+    analyze({ writeTo: t => fs.writeFileSync('bundleAnalysis.out', t) }),
     image(),
-    inject({
-      include: '**/*.min.js',
-      exclude: ['node_modules/**', 'profile/**'],
-      $: 'jquery',
-      jquery: 'jquery',
-      'window.jQuery': 'jquery',
-      jQuery: 'jquery',
-    }),
     postcss({
       extensions: ['.css'],
     }),
@@ -65,7 +59,7 @@ export default {
     production &&
       terser({
         sourcemap: true,
-        exclude: ['node_modules/**', 'profile/**'],
+        exclude: ['./node_modules/**', './profile/**'],
         include: '**/*.min.js',
       }),
   ],
