@@ -29,3 +29,9 @@ export const portfolio = [
   `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440536/projects/portfolio2_ozrvma.png`,
   `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1590440536/projects/portfolio3_h1o1tr.png`,
 ]
+
+export const blog = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1592164459/projects/blog1_bigeht.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1592164459/projects/blog2_lbstkw.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1592164459/projects/blog3_lftj00.png`,
+]
