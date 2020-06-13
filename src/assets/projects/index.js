@@ -35,3 +35,7 @@ export const blog = [
   `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1592164459/projects/blog2_lbstkw.png`,
   `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1592164459/projects/blog3_lftj00.png`,
 ]
+
+export const reactReduxTypescript = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1592250740/projects/reactreduxtypescript_wnutxw.png`,
+]
