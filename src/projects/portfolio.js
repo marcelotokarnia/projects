@@ -11,6 +11,6 @@ export default {
     As an attempt to organize my portfolio with a bit more condensed (and visual) information than the spread version of it in Github.`,
   images: portfolio,
   tags: ['Svelte', 'Tachyons', 'Bootstrap', 'Javascript', 'Rollup'],
-  repo: 'https://github.com/marcelotokarnia/marcelotokarnia.github.io',
+  repo: 'https://github.com/marcelotokarnia/projects',
   link: 'https://projects.tokks.tech',
 }
