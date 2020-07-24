@@ -1,7 +1,7 @@
 <script>
   import { append, cond, equals, isEmpty, always, gte, T, prepend, take, drop } from 'ramda'
   import Project from './Project.svelte'
-  import projects from '../fixtures/projects'
+  import projects from '../projects'
 
   const getSize = cond([
     [equals(0), always('big')],
