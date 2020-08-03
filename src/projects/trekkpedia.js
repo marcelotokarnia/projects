@@ -28,5 +28,5 @@ export default {
     'Python',
   ],
   repo: 'https://github.com/marcelotokarnia/mountains-catalog',
-  link: 'http://mountains.tokks.tech/',
+  link: 'https://mountain-catalog.herokuapp.com/',
 }

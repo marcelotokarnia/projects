@@ -6,6 +6,7 @@ import revues from './revues'
 import playingWithCanvas from './playingWithCanvas'
 import portfolio from './portfolio'
 import reactReduxTypescript from './reactReduxTypescript'
+import bubbles from './bubbles'
 
 export default [
   stravaMaps,
@@ -13,6 +14,7 @@ export default [
   portfolio,
   trekkpedia,
   djangoNews,
+  bubbles,
   reactReduxTypescript,
   revues,
   playingWithCanvas,
