@@ -39,3 +39,7 @@ export const blog = [
 export const reactReduxTypescript = [
   `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1592250740/projects/reactreduxtypescript_wnutxw.png`,
 ]
+
+export const bubbles = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1594856646/bubbleGame_ciwxhn.png`,
+]
