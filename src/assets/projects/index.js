@@ -43,3 +43,9 @@ export const reactReduxTypescript = [
 export const bubbles = [
   `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1594856646/bubbleGame_ciwxhn.png`,
 ]
+
+export const apartments = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1601029606/projects/apartments1_svqxe7.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1601029613/projects/apartments2_rag3h6.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1601029611/projects/apartments3_yvrux4.png`,
+]
