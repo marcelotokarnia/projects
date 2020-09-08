@@ -49,3 +49,9 @@ export const apartments = [
   `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1601029613/projects/apartments2_rag3h6.png`,
   `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1601029611/projects/apartments3_yvrux4.png`,
 ]
+
+export const viewport = [
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1601047079/projects/viewport1_oc8b0n.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1601047079/projects/viewport2_mi7nwk.png`,
+  `https://res.cloudinary.com/marcelotokarnia/image/upload${cloudinaryTransformations}/v1601047079/projects/viewport3_yrurwd.png`,
+]
