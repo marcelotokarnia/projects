@@ -7,10 +7,13 @@
   a:visited {
     color: white;
   }
+  a:hover {
+    color: white;
+  }
 </style>
 
 <a
-  class={`no-underline white bg-animate bg-near-black hover-bg-gray items-center ma2 tc
+  class={`no-underline white bg-animate bg-mid-gray hover-bg-gray items-center ma2 tc
   br2 pa2 pointer bn w4 h4`}
   href={repo}
   title="GitHub">

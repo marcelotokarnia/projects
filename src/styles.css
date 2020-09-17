@@ -116,3 +116,21 @@
 button:focus {
   outline: none;
 }
+
+.cursor-auto {
+  cursor: auto;
+}
+
+body {
+  background-color: #16202c;
+  color: #ffffff;
+}
+
+.top-menu {
+  background-color: #192734;
+  color: #8899a6;
+}
+
+.top-menu a {
+  color: #1fa1f2;
+}

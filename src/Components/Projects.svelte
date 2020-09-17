@@ -34,8 +34,5 @@
       <Project {...project} />
     {/each}
 
-    {#if idx !== containers.length - 1}
-      <hr class="hidden-xs absolute w-100 bottom--2" />
-    {/if}
   </div>
 {/each}

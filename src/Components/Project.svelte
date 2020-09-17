@@ -25,10 +25,13 @@
   a:visited {
     color: white;
   }
+  a:hover {
+    color: white;
+  }
 </style>
 
 <div class={getClasses(size)}>
-  <button class="pointer w-100 overflow-hidden db relative project-thumbnail-post__link">
+  <button class="cursor-auto w-100 overflow-hidden db relative project-thumbnail-post__link">
     <RotatingImages {title} {images} />
     <a
       class="db bg-black-30 hover-bg-black-60 bg-animate white pv3 ph4 ba b--white absolute
@@ -39,13 +42,13 @@
   </button>
   <div class="flex mb2">
     <div class="flex-auto">
-      <h1 class={`pointer ${size === 'big' ? 'f1' : 'f3'} b`}>{title}</h1>
+      <h1 class={`${size === 'big' ? 'f1' : 'f3'} b`}>{title}</h1>
       <Tags {tags} />
     </div>
     <GithubSource {repo} />
   </div>
 
-  <div class="f4 dark-gray">
+  <div class="f4">
     {#each text.split('\n') as line}
       <p>{line}</p>
     {/each}
