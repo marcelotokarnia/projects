@@ -48,25 +48,25 @@ export const reactReduxTypescript = idsToCloudinary([
   `reactreduxtypescript_wnutxw.png`,
 ])
 
-export const bubbles = [
+export const bubbles = idsToCloudinary([
   `bubbleGame_u9c9uq.png`,
-]
+])
 
-export const apartments = [
+export const apartments = idsToCloudinary([
   `apartments1_svqxe7.png`,
   `apartments2_rag3h6.png`,
   `apartments3_yvrux4.png`,
-]
+])
 
-export const viewport = [
+export const viewport = idsToCloudinary([
   `viewport1_oc8b0n.png`,
   `viewport2_mi7nwk.png`,
   `viewport3_yrurwd.png`,
-]
+])
 
-export const slickSlices = [
-  `slices1_dlzuq4.png`
+export const slickSlices = idsToCloudinary([
+  `slices1_dlzuq4.png`,
   `slices2_roegpo.png`,
   `slices3_b8uvb4.png`,
   `slices4_kxdjgj.png`,
-]
+])
